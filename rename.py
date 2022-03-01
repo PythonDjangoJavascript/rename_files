@@ -3,6 +3,12 @@ import shutil
 from openpyxl import load_workbook
 from pathlib import Path
 
+"""automate file renaming. just add the file extension as file extension var
+create new folder named ->'for_rename' and put this module to the dir whre
+all file is available ath needs to rename
+also don't forget to add all data in two row inside 'rename_files.xlsx' file
+firs column is the original files name and second column is new name"""
+
 file_extension = ".jpg"
 
 wb = load_workbook('rename_files.xlsx')
@@ -33,21 +39,3 @@ for x in os.listdir():
             print(x)
             
 print(f'total {a}')
-    
-# for x in os.listdir():
-#     if x.endswith(file_extension):
-#         # Prints only text file present in My Folder
-#         if rename_data.get(x) is not None:
-#             os.rename(x, rename_data.get(x))
-#             print(f'renamed {x}  new: -> {rename_data.get(x)}')
-
-# a = 0
-# for x in os.listdir():
-#     if x.endswith(file_extension):
-#         # Prints only text file present in My Folder
-#         if rename_data.get(x) is not None:
-#             # os.rename(x, rename_data.get(x))
-#             a += 1
-#             print(f'renamed {x}  new: -> {rename_data.get(x)}')
-            
-# print(f'total {a}')
